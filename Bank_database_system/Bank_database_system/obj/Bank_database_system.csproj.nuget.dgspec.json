@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\桌面\\STUDY\\大二下\\数据库\\数据库设计\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj": {}
+    "C:\\Users\\13931\\Source\\Repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj": {}
   },
   "projects": {
-    "D:\\桌面\\STUDY\\大二下\\数据库\\数据库设计\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj": {
+    "C:\\Users\\13931\\Source\\Repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\桌面\\STUDY\\大二下\\数据库\\数据库设计\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
+        "projectUniqueName": "C:\\Users\\13931\\Source\\Repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
         "projectName": "Bank_database_system",
-        "projectPath": "D:\\桌面\\STUDY\\大二下\\数据库\\数据库设计\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
-        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
-        "outputPath": "D:\\桌面\\STUDY\\大二下\\数据库\\数据库设计\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\obj\\",
+        "projectPath": "C:\\Users\\13931\\Source\\Repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
+        "packagesPath": "C:\\Users\\13931\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\13931\\Source\\Repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\13931\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +48,12 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Oracle.ManagedDataAccess.Core": {
+              "target": "Package",
+              "version": "[23.4.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -63,7 +73,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
