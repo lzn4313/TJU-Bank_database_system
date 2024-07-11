@@ -39,7 +39,7 @@ namespace Bank_database_system
         }
 
         // 银行卡查询的步骤
-        private static DataTable BankCardInquiry(string bankCardID)
+        public static DataTable BankCardInquiry(string bankCardID)
         {
             // 返回的表
             DataTable dataTable = new DataTable();
@@ -306,5 +306,111 @@ namespace Bank_database_system
             }
         }
 
+        // 填写个人详细信息的银行卡办理
+        public static bool BankCardProcessing(string branchID, string ID, string name, string address, string phoneNumber, string InitialPassword)
+        {
+            if (CustomerInquiry(ID).Rows.Count == 0)
+            {
+                if (!CustomerInsert(ID, name, address, phoneNumber))
+                {
+                    return false;
+                }
+            }
+
+            BankAccountGenerator generator = new BankAccountGenerator();
+            string bankCardID = generator.GenerateUniqueCardID();
+            string hashPassword = PasswordHandler.HashPassword(InitialPassword); // 密码加密
+            DateTime openDate = GetCurrentTime();
+
+            try
+            {
+                using (OracleConnection connection = new(connectionString))
+                {
+                    // 打开数据库连接
+                    connection.Open();
+
+                    // 数据库操作
+                    string insertQuery = @"INSERT INTO ACCOUNT (CREDIT_CARD_NUMBERS, IDENTIFICATION_NUMBER, BRANCH_ID, OPEN_DATE, STATE, BALANCE, PASSWORD, CREDIT_SCORE) 
+                                           VALUES (:bankCardID, :ID, :branchID, :openDate, :state, :balance, :hashPassword, :creditScore)";
+                    using (OracleCommand command = new OracleCommand(insertQuery, connection))
+                    {
+                        // 添加参数
+                        command.Parameters.Add(new OracleParameter("bankCardID", bankCardID));
+                        command.Parameters.Add(new OracleParameter("ID", ID));
+                        command.Parameters.Add(new OracleParameter("branchID", branchID));
+                        command.Parameters.Add(new OracleParameter("openDate", openDate));
+                        command.Parameters.Add(new OracleParameter("state", "正常"));
+                        // 设置参数
+                        OracleParameter param = new OracleParameter("balance", OracleDbType.Decimal);
+                        param.Value = 0;
+                        param.Size = 12;  // 总位数
+                        param.Scale = 2;  // 小数点后位数
+
+                        command.Parameters.Add(param);
+                        command.Parameters.Add(new OracleParameter("hashPassword", hashPassword));
+                        command.Parameters.Add(new OracleParameter("creditScore", 50));
+
+                        // 执行插入操作
+                        if (command.ExecuteNonQuery() > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                // 处理 Oracle 数据库相关异常
+                MessageBox.Show($"数据库操作失败：{ex.Message}", "数据库错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            catch (Exception ex)
+            {
+                // 处理其他类型的异常
+                MessageBox.Show($"发生错误：{ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        private static DateTime GetCurrentTime()
+        {
+            return DateTime.Now;
+        }
+    }
+
+    // 随机生成20位的银行卡号
+    public class BankAccountGenerator
+    {
+        private Random random = new Random();
+
+        public string GenerateUniqueCardID()
+        {
+            string cardNumber;
+            do
+            {
+                cardNumber = GenerateRandomCardID();
+            } while (AccountOperations.BankCardInquiry(cardNumber).Rows.Count > 0);
+
+            return cardNumber;
+        }
+
+        private string GenerateRandomCardID()
+        {
+            // 生成20位随机数字串
+            const int cardNumberLength = 20;
+            const string digits = "0123456789";
+            char[] cardNumberArray = new char[cardNumberLength];
+
+            for (int i = 0; i < cardNumberLength; i++)
+            {
+                cardNumberArray[i] = digits[random.Next(digits.Length)];
+            }
+
+            return new string(cardNumberArray);
+        }
     }
 }
