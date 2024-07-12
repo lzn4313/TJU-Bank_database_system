@@ -317,8 +317,7 @@ namespace Bank_database_system
                 }
             }
 
-            BankAccountGenerator generator = new BankAccountGenerator();
-            string bankCardID = generator.GenerateUniqueCardID();
+            string bankCardID = BankAccountGenerator.GenerateUniqueCardID();
             string hashPassword = PasswordHandler.HashPassword(InitialPassword); // 密码加密
             DateTime openDate = GetCurrentTime();
 
@@ -383,11 +382,11 @@ namespace Bank_database_system
     }
 
     // 随机生成20位的银行卡号
-    public class BankAccountGenerator
+    public static class BankAccountGenerator
     {
-        private Random random = new Random();
+        private static Random random = new Random();
 
-        public string GenerateUniqueCardID()
+        public static string GenerateUniqueCardID()
         {
             string cardNumber;
             do
@@ -398,7 +397,7 @@ namespace Bank_database_system
             return cardNumber;
         }
 
-        private string GenerateRandomCardID()
+        private static string GenerateRandomCardID()
         {
             // 生成20位随机数字串
             const int cardNumberLength = 20;
