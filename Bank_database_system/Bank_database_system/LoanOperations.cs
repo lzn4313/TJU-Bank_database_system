@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using System.Data;
 
 namespace Bank_database_system
 {
@@ -61,5 +62,53 @@ namespace Bank_database_system
             }
         }
 
+
+        // 贷款查询
+        public static DataTable GetLoansByCardNumber(string cardNumber, int pageNumber, int pageSize)
+        {
+            try
+            {
+                using (OracleConnection connection = new OracleConnection(connectionString))
+                {
+                    connection.Open();
+                    int offset = (pageNumber - 1) * pageSize;
+
+                    string query = @"
+                SELECT *
+                FROM (
+                    SELECT a.*, ROWNUM rnum
+                    FROM (
+                        SELECT LOAN_ID, CREDIT_CARD_NUMBERS, AMOUNT, REPAYMENT_BALANCE, INTEREST_RATE, BEGIN_TIME, END_TIME, STATE
+                        FROM LOAN
+                        WHERE CREDIT_CARD_NUMBERS = :cardNumber
+                        ORDER BY LOAN_ID
+                    ) a
+                    WHERE ROWNUM <= :maxRow
+                )
+                WHERE rnum > :minRow";
+
+                    using (OracleCommand command = new OracleCommand(query, connection))
+                    {
+                        command.Parameters.Add(new OracleParameter("cardNumber", cardNumber));
+                        command.Parameters.Add(new OracleParameter("maxRow", offset + pageSize));
+                        command.Parameters.Add(new OracleParameter("minRow", offset));
+
+                        using (OracleDataReader reader = command.ExecuteReader())
+                        {
+                            DataTable dataTable = new DataTable();
+                            dataTable.Load(reader);
+                            return dataTable;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+                return new DataTable(); // 出错返回空表
+            }
+        }
+
     }
+
 }

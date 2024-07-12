@@ -1,9 +1,9 @@
 ﻿using System;
 using Oracle.ManagedDataAccess.Client;
 
-public class LoanCalculator
+public static class LoanCalculator
 {
-    private string connectionString =
+    private const string connectionString =
         "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=47.96.39.153)(PORT=1521))(CONNECT_DATA=(SID=orcl)));" +
         "User Id=system;Password=Tongji123456;";
 
@@ -13,7 +13,7 @@ public class LoanCalculator
         EqualPrincipal // 等额本金
     }
 
-    public decimal[] CalculateMonthlyRepayment(decimal principal, int years, RepaymentType repaymentType)
+    public static decimal[] CalculateMonthlyRepayment(decimal principal, int years, RepaymentType repaymentType)
     {
         try
         {
