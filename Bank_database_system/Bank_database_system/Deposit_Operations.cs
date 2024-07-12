@@ -6,6 +6,10 @@ namespace Bank_database_system  // 定义命名空间 Bank_database_system
 {
     public class Deposit_Operations  // 定义类 Deposit_Operations
     {
+        // 定义数据库连接字符串作为常量
+        public const string connectionString =
+            @"Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=47.96.39.153)(PORT=1521))
+            (CONNECT_DATA=(SID=orcl)));User Id=system;Password=Tongji123456;";
 
         // 定义 Deposit 方法
         public static string Deposit(
