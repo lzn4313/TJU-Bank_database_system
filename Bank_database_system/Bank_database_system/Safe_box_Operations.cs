@@ -11,9 +11,11 @@ namespace Bank_database_system  // 定义命名空间 Bank_database_system
             @"Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=47.96.39.153)(PORT=1521))
             (CONNECT_DATA=(SID=orcl)));User Id=system;Password=Tongji123456;";
 
-        // 查询并打印所有保险箱数据的方法
-        public static void QueryAndPrintSafeBoxData()
+        // 查询并返回所有保险箱数据的方法
+        public static DataTable QueryAndReturnSafeBoxData()
         {
+            DataTable safeBoxTable = new DataTable();
+
             // 使用 OracleConnection 对象建立数据库连接
             using (OracleConnection connection = new OracleConnection(connectionString))
             {
@@ -31,15 +33,7 @@ namespace Bank_database_system  // 定义命名空间 Bank_database_system
                         // 使用 OracleDataAdapter 填充数据表
                         using (OracleDataAdapter adapter = new OracleDataAdapter(command))
                         {
-                            // 创建 DataTable 对象来存储查询结果
-                            DataTable safeBoxTable = new DataTable();
                             adapter.Fill(safeBoxTable);  // 填充数据表
-
-                            // 遍历数据表中的每一行，输出结果
-                            foreach (DataRow row in safeBoxTable.Rows)
-                            {
-                                Console.WriteLine($"SAFE_BOX_ID: {row["SAFE_BOX_ID"]}, BRANCH_ID: {row["BRANCH_ID"]}, BOX_SIZE: {row["BOX_SIZE"]}, STATE: {row["STATE"]}");
-                            }
                         }
                     }
                 }
@@ -49,11 +43,15 @@ namespace Bank_database_system  // 定义命名空间 Bank_database_system
                     Console.WriteLine("An error occurred: " + ex.Message);
                 }
             }
+
+            return safeBoxTable;
         }
 
-        // 查询并打印特定保险箱数据的方法
-        public static void SELECT_SAFE_BOX(string safeBoxId)
+        // 查询并返回特定保险箱数据的方法
+        public static DataTable SelectSafeBox(string safeBoxId)
         {
+            DataTable safeBoxTable = new DataTable();
+
             // 使用 OracleConnection 对象建立数据库连接
             using (OracleConnection connection = new OracleConnection(connectionString))
             {
@@ -71,18 +69,10 @@ namespace Bank_database_system  // 定义命名空间 Bank_database_system
                         // 添加参数并设置其值
                         command.Parameters.Add(new OracleParameter(":safeBoxId", safeBoxId));
 
-                        // 执行查询并获取结果
-                        using (OracleDataReader reader = command.ExecuteReader())
+                        // 使用 OracleDataAdapter 填充数据表
+                        using (OracleDataAdapter adapter = new OracleDataAdapter(command))
                         {
-                            if (reader.Read())
-                            {
-                                // 输出查询结果
-                                Console.WriteLine($"SAFE_BOX_ID: {reader["SAFE_BOX_ID"]}, BRANCH_ID: {reader["BRANCH_ID"]}, BOX_SIZE: {reader["BOX_SIZE"]}, BOX_CASH_PLEDGE: {reader["BOX_CASH_PLEDGE"]}, RENTAL_AMOUNT: {reader["RENTAL_AMOUNT"]}, STATE: {reader["STATE"]}");
-                            }
-                            else
-                            {
-                                Console.WriteLine("No safe box found with the given ID.");
-                            }
+                            adapter.Fill(safeBoxTable);  // 填充数据表
                         }
                     }
                 }
@@ -92,6 +82,8 @@ namespace Bank_database_system  // 定义命名空间 Bank_database_system
                     Console.WriteLine("An error occurred: " + ex.Message);
                 }
             }
+
+            return safeBoxTable;
         }
 
         // 调用 HIRE_SAFE_BOX SQL 函数的方法
@@ -142,6 +134,83 @@ namespace Bank_database_system  // 定义命名空间 Bank_database_system
                     return "An error occurred: " + ex.Message;
                 }
             }
+        }
+
+        // 调用 PasswordCheck 函数的方法
+        public static int PasswordCheck(
+            string password,
+            string hireCreditCardNumbers,
+            string safeBoxHireId,
+            int hireDuration,
+            decimal boxCashPledge,
+            decimal hireRentalAmount,
+            string hireStaffId,
+            string ip)
+        {
+            // 从 ACCOUNT 表中查找 hireCreditCardNumbers 对应的密码
+            string storedPassword = GetPasswordByCreditCardNumber(hireCreditCardNumbers);
+
+            // 如果找不到密码，直接返回 0
+            if (string.IsNullOrEmpty(storedPassword))
+            {
+                return 0;
+            }
+
+            // 调用 PasswordHandler 的 VerifyPassword 方法进行密码验证
+            if (PasswordHandler.VerifyPassword(password, storedPassword))
+            {
+                // 如果密码验证通过，调用 HireSafeBox 方法
+                HireSafeBox(hireCreditCardNumbers, safeBoxHireId, hireDuration, boxCashPledge, hireRentalAmount, hireStaffId, ip);
+                return 1;
+            }
+            else
+            {
+                // 如果密码验证不通过，直接返回 0
+                return 0;
+            }
+        }
+
+        // 从 ACCOUNT 表中查找 hireCreditCardNumbers 对应的密码
+        private static string GetPasswordByCreditCardNumber(string hireCreditCardNumbers)
+        {
+            string password = null;
+
+            // 使用 OracleConnection 对象建立数据库连接
+            using (OracleConnection connection = new OracleConnection(connectionString))
+            {
+                try
+                {
+                    // 打开数据库连接
+                    connection.Open();
+
+                    // 定义 SQL 查询语句
+                    string query = "SELECT PASSWORD FROM ACCOUNT WHERE CREDIT_CARD_NUMBER = :creditCardNumber";
+
+                    // 使用 OracleCommand 对象执行 SQL 查询
+                    using (OracleCommand command = new OracleCommand(query, connection))
+                    {
+                        // 添加参数并设置其值
+                        command.Parameters.Add(new OracleParameter(":creditCardNumber", hireCreditCardNumbers));
+
+                        // 执行查询并获取结果
+                        using (OracleDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // 获取查询结果中的密码
+                                password = reader["PASSWORD"].ToString();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)  // 捕获并处理可能发生的异常
+                {
+                    // 输出错误信息到控制台
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                }
+            }
+
+            return password;
         }
     }
 }
