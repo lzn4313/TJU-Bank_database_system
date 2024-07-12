@@ -280,6 +280,129 @@ public static class FunctionsforITDepartment
             return new DataTable(); // 出错返回空表
         }
     }
+    public static DataTable GetOperateRecords(string operateId)
+    {
+        try
+        {
+            using (OracleConnection connection = new OracleConnection(connectionString))
+            {
+                connection.Open();
 
+                string query = @"
+                    SELECT *
+                    FROM OPERATE_RECORD
+                    WHERE OPERATE_ID = :operateId";                
+                using (OracleCommand command = new OracleCommand(query, connection))
+                {
+                    command.Parameters.Add(new OracleParameter("operateId", operateId));
+ 
+                    using (OracleDataReader reader = command.ExecuteReader())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader);
+                        return dataTable;
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // 报错信息，测试用
+            // Console.WriteLine("Error: " + ex.Message);
+            return new DataTable(); // 出错返回空表
+        }
+    }
+    public static DataTable GetOperateDetailsByOperateId(string operateId)
+    {
+        try
+        {
+            using (OracleConnection connection = new OracleConnection(connectionString))
+            {
+                connection.Open();
+
+                // 查询操作记录，获取操作类型及相关ID
+                string operateRecordQuery = @"
+                    SELECT *
+                    FROM OPERATE_RECORD
+                    WHERE OPERATE_ID = :operateId";
+
+                using (OracleCommand operateRecordCommand = new OracleCommand(operateRecordQuery, connection))
+                {
+                    operateRecordCommand.Parameters.Add(new OracleParameter("operateId", operateId));
+                    using (OracleDataReader operateRecordReader = operateRecordCommand.ExecuteReader())
+                    {
+                        if (operateRecordReader.Read())
+                        {
+                            string operateKind = operateRecordReader["OPERATE_KIND"].ToString();
+                            string loanId = operateRecordReader["LOAN_ID"].ToString();
+                            string depositId = operateRecordReader["DEPOSIT_ID"].ToString();
+                            string hireId = operateRecordReader["HIRE_ID"].ToString();
+                            string transactionId = operateRecordReader["TRANSACTION_ID"].ToString();
+
+                            string detailsQuery = "";
+                            string detailId = "";
+                            string detailTable = "";
+
+                            // 根据操作类型选择查询的表和ID
+                            switch (operateKind)
+                            {
+                                case "1":
+                                    detailsQuery = "SELECT * FROM LOAN WHERE LOAN_ID = :detailId";
+                                    detailId = loanId;
+                                    detailTable = "LOAN";
+                                    break;
+                                case "2":
+                                    detailsQuery = "SELECT * FROM TIME_DEPOSIT WHERE DEPOSIT_ID = :detailId";
+                                    detailId = depositId;
+                                    detailTable = "TIME_DEPOSIT";
+                                    break;
+                                case "3":
+                                    detailsQuery = "SELECT * FROM SAFE_BOX_HIRE WHERE HIRE_ID = :detailId";
+                                    detailId = hireId;
+                                    detailTable = "SAFE_BOX_HIRE";
+                                    break;
+                                case "4":
+                                    detailsQuery = "SELECT * FROM TRANSACTION_HISTORY WHERE TRANSACTION_ID = :detailId";
+                                    detailId = transactionId;
+                                    detailTable = "TRANSACTION_HISTORY";
+                                    break;
+                                default:
+                                    throw new Exception("不支持的操作类型: " + operateKind);
+                            }
+
+                            if (!string.IsNullOrEmpty(detailsQuery) && !string.IsNullOrEmpty(detailId))
+                            {
+                                using (OracleCommand detailsCommand = new OracleCommand(detailsQuery, connection))
+                                {
+                                    detailsCommand.Parameters.Add(new OracleParameter("detailId", detailId));
+
+                                    using (OracleDataReader detailsReader = detailsCommand.ExecuteReader())
+                                    {
+                                        DataTable dataTable = new DataTable();
+                                        dataTable.Load(detailsReader);
+                                        return dataTable;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                throw new Exception("未找到操作记录: " + operateId);
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception("未找到操作记录: " + operateId);
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            // 可以记录异常信息以便调试
+            Console.WriteLine("Error: " + ex.Message);
+            return new DataTable(); // 出错返回空表
+        }
+    }
 
 }

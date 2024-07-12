@@ -1,6 +1,7 @@
 ﻿//using System;
 //using System.Data;
 //using Oracle.ManagedDataAccess.Client;
+//using static System.Runtime.InteropServices.JavaScript.JSType;
 
 //class Test_FunctionsforITDepartment
 //{
@@ -133,7 +134,33 @@
 //        }
 
 
+//        // 设置查找操作记录
+//        string operateId = "500";
 
+//        DataTable operateDetails = FunctionsforITDepartment.GetOperateDetailsByOperateId(operateId);
+
+//        // 输出查询结果
+//        if (operateDetails.Rows.Count > 0)
+//        {
+//            foreach (DataColumn column in operateDetails.Columns)
+//            {
+//                Console.Write(column.ColumnName + "\t");
+//            }
+//            Console.WriteLine();
+
+//            foreach (DataRow row in operateDetails.Rows)
+//            {
+//                foreach (var item in row.ItemArray)
+//                {
+//                    Console.Write(item + "\t");
+//                }
+//                Console.WriteLine();
+//            }
+//        }
+//        else
+//        {
+//            Console.WriteLine("未找到操作详细信息。");
+//        }
 
 
 
