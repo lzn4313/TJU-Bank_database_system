@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\13931\\Source\\Repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj": {}
+    "E:\\DataBase\\TJU-Bank_database_system-main2.0\\TJU-Bank_database_system-main2.0\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj": {}
   },
   "projects": {
-    "C:\\Users\\13931\\Source\\Repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj": {
+    "E:\\DataBase\\TJU-Bank_database_system-main2.0\\TJU-Bank_database_system-main2.0\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\13931\\Source\\Repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
+        "projectUniqueName": "E:\\DataBase\\TJU-Bank_database_system-main2.0\\TJU-Bank_database_system-main2.0\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
         "projectName": "Bank_database_system",
-        "projectPath": "C:\\Users\\13931\\Source\\Repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
-        "packagesPath": "C:\\Users\\13931\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\13931\\Source\\Repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\obj\\",
+        "projectPath": "E:\\DataBase\\TJU-Bank_database_system-main2.0\\TJU-Bank_database_system-main2.0\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "E:\\DataBase\\TJU-Bank_database_system-main2.0\\TJU-Bank_database_system-main2.0\\Bank_database_system\\Bank_database_system\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\13931\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -38,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -73,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
