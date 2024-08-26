@@ -24,7 +24,7 @@ public static class FunctionsforITDepartment
                     SELECT a.*, ROWNUM rnum
                     FROM (
                         SELECT *
-                        FROM STAFF
+                        FROM STAFF NATURAL JOIN COSTUMER
                         WHERE (:staffIdPrefix IS NULL OR STAFF_ID LIKE :staffIdPrefix || '%')
                           AND (:name IS NULL OR NAME LIKE :name || '%')
                           AND (:branchId IS NULL OR BRANCH_ID = :branchId)
