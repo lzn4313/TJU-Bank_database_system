@@ -1,22 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\13931\\source\\repos\\TJU-Bank_database_system\\Bank_database_system\\",
+  "WorkspaceRootPath": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|c:\\users\\13931\\source\\repos\\tju-bank_database_system\\bank_database_system\\bank_database_system\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|solutionrelative:bank_database_system\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|c:\\users\\13931\\source\\repos\\tju-bank_database_system\\bank_database_system\\bank_database_system\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|d:\\\u684C\u9762\\study\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\tju-bank_database_system\\bank_database_system\\bank_database_system\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|solutionrelative:bank_database_system\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|c:\\users\\13931\\source\\repos\\tju-bank_database_system\\bank_database_system\\bank_database_system\\bank_database_system.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|solutionrelative:bank_database_system\\bank_database_system.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|d:\\\u684C\u9762\\study\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\tju-bank_database_system\\bank_database_system\\bank_database_system\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|solutionrelative:bank_database_system\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|c:\\users\\13931\\source\\repos\\tju-bank_database_system\\bank_database_system\\bank_database_system\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|solutionrelative:bank_database_system\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|d:\\\u684C\u9762\\study\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\tju-bank_database_system\\bank_database_system\\bank_database_system\\withdrawal_operations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|solutionrelative:bank_database_system\\withdrawal_operations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|d:\\\u684C\u9762\\study\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\tju-bank_database_system\\bank_database_system\\bank_database_system\\balance_inquiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|solutionrelative:bank_database_system\\balance_inquiry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|d:\\\u684C\u9762\\study\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\tju-bank_database_system\\bank_database_system\\bank_database_system\\hr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|solutionrelative:bank_database_system\\hr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|d:\\\u684C\u9762\\study\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\tju-bank_database_system\\bank_database_system\\bank_database_system\\functionsforitdepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|solutionrelative:bank_database_system\\functionsforitdepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,74 +34,87 @@
       "DocumentGroups": [
         {
           "DockedWidth": 401,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Form1.cs",
+              "RelativeDocumentMoniker": "Bank_database_system\\Form1.cs",
+              "ToolTip": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Form1.cs",
+              "RelativeToolTip": "Bank_database_system\\Form1.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAADwvy4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T04:11:15.771Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\13931\\source\\repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Form1.cs",
+              "Title": "Form1.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Form1.cs",
               "RelativeDocumentMoniker": "Bank_database_system\\Form1.cs",
-              "ToolTip": "C:\\Users\\13931\\source\\repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Form1.cs",
-              "RelativeToolTip": "Bank_database_system\\Form1.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAIwAQAAAAeAAAA",
+              "ToolTip": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Form1.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "Bank_database_system\\Form1.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T03:34:05.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ConnectDB.cs",
-              "DocumentMoniker": "C:\\Users\\13931\\source\\repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\ConnectDB.cs",
-              "RelativeDocumentMoniker": "Bank_database_system\\ConnectDB.cs",
-              "ToolTip": "C:\\Users\\13931\\source\\repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\ConnectDB.cs",
-              "RelativeToolTip": "Bank_database_system\\ConnectDB.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAIwAQAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T03:33:22.612Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+              "WhenOpened": "2024-08-26T04:11:10.703Z",
+              "EditorCaption": " [\u8BBE\u8BA1]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Bank_database_system",
-              "DocumentMoniker": "C:\\Users\\13931\\Source\\Repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
-              "RelativeDocumentMoniker": "Bank_database_system\\Bank_database_system.csproj",
-              "ToolTip": "C:\\Users\\13931\\Source\\Repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
-              "RelativeToolTip": "Bank_database_system\\Bank_database_system.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-07-09T03:34:39.267Z",
+              "Title": "Withdrawal_Operations.cs",
+              "DocumentMoniker": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Withdrawal_Operations.cs",
+              "RelativeDocumentMoniker": "Bank_database_system\\Withdrawal_Operations.cs",
+              "ToolTip": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Withdrawal_Operations.cs",
+              "RelativeToolTip": "Bank_database_system\\Withdrawal_Operations.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T04:09:19.186Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Form1.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "C:\\Users\\13931\\source\\repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Form1.cs",
-              "RelativeDocumentMoniker": "Bank_database_system\\Form1.cs",
-              "ToolTip": "C:\\Users\\13931\\source\\repos\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Form1.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "Bank_database_system\\Form1.cs [\u8BBE\u8BA1]",
+              "Title": "Balance_Inquiry.cs",
+              "DocumentMoniker": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Balance_Inquiry.cs",
+              "RelativeDocumentMoniker": "Bank_database_system\\Balance_Inquiry.cs",
+              "ToolTip": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Balance_Inquiry.cs",
+              "RelativeToolTip": "Bank_database_system\\Balance_Inquiry.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAuwDgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-09T03:34:56.038Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
+              "WhenOpened": "2024-08-26T04:09:06.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FunctionsforITDepartment.cs",
+              "DocumentMoniker": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\FunctionsforITDepartment.cs",
+              "RelativeDocumentMoniker": "Bank_database_system\\FunctionsforITDepartment.cs",
+              "ToolTip": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\FunctionsforITDepartment.cs",
+              "RelativeToolTip": "Bank_database_system\\FunctionsforITDepartment.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAIwCwAAACOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T07:31:00.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HR.cs",
+              "DocumentMoniker": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\HR.cs",
+              "RelativeDocumentMoniker": "Bank_database_system\\HR.cs",
+              "ToolTip": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\HR.cs",
+              "RelativeToolTip": "Bank_database_system\\HR.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-25T05:28:02.472Z",
+              "EditorCaption": ""
             }
           ]
         }

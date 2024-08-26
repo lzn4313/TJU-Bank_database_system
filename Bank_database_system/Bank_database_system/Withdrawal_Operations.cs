@@ -12,14 +12,14 @@ namespace Bank_database_system  // 定义命名空间 Bank_database_system
             (CONNECT_DATA=(SID=orcl)));User Id=system;Password=Tongji123456;";
 
         // 定义 Withdrawal 方法
-        public static string Withdrawal(
+        /*public static string Withdrawal()
             
         {
             
-        }
+        }*/
 
         // 定义 PasswordCheck 函数
-        public static int PasswordCheck(
+        public static string PasswordCheck(
             string password,
             string withdrawalCreditCardNumbers,
             string withdrawalCurrencyKind,

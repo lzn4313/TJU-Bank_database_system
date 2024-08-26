@@ -31,47 +31,12 @@
         "dependencies": {
           "System.Diagnostics.EventLog": "8.0.0",
           "System.Security.Cryptography.ProtectedData": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/System.Configuration.ConfigurationManager.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
-          }
         }
       },
-      "System.Diagnostics.EventLog/8.0.0": {
-        "runtime": {
-          "lib/net8.0/System.Diagnostics.EventLog.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
-          }
-        }
-      },
+      "System.Diagnostics.EventLog/8.0.0": {},
       "System.Diagnostics.PerformanceCounter/8.0.0": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Diagnostics.PerformanceCounter.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
-          }
         }
       },
       "System.DirectoryServices.Protocols/8.0.0": {
@@ -106,30 +71,9 @@
       "System.Security.Cryptography.Pkcs/8.0.0": {
         "dependencies": {
           "System.Formats.Asn1": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
-            "rid": "win",
-            "assetType": "runtime",
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
-          }
         }
       },
-      "System.Security.Cryptography.ProtectedData/8.0.0": {
-        "runtime": {
-          "lib/net8.0/System.Security.Cryptography.ProtectedData.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.53103"
-          }
-        }
-      }
+      "System.Security.Cryptography.ProtectedData/8.0.0": {}
     }
   },
   "libraries": {

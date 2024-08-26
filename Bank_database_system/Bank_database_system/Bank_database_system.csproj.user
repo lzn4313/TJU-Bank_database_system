@@ -1,8 +1,173 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <ItemGroup>
-        <Compile Update="Form1.cs">
-            <SubType>Form</SubType>
-        </Compile>
-    </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="业务部\业务首页.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="业务部\操作确认.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="业务部\柜台业务\交易记录查询a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\柜台业务\交易记录查询b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\柜台业务\交易记录查询c.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\柜台业务\保险箱租用a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\柜台业务\保险箱租用b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\柜台业务\保险箱租用c.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\柜台业务\取款a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\柜台业务\定期存款a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\操作成功失败提示.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="业务部\账户操作\信息查询a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\账户操作\信息查询b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\账户操作\信息查询c.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\账户操作\修改用户信息a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\账户操作\修改用户信息b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\账户操作\账户操作a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\账户操作\银行卡办理a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\账户操作\银行卡办理b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\贷款业务\贷款业务a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\贷款业务\贷款办理a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\贷款业务\贷款办理b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\贷款业务\贷款查询a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\贷款业务\贷款查询b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\贷款业务\贷款查询c.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\贷款业务\贷款查询d.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\输入密码.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="业务部\柜台业务\存款a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\柜台业务\柜台业务a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\柜台业务\柜台业务b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="业务部\柜台业务\转账a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="人事部\修改员工a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="人事部\修改员工b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="人事部\修改员工c.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="人事部\删除员工a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="人事部\删除员工b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="人事部\删除员工c.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="财务部\资金查看.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="财务部\工资发放a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="信息技术部\操作记录a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="信息技术部\支行信息a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="信息技术部\支行信息b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="信息技术部\支行信息c.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="人事部\新建员工a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="财务部\流水查询a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="人事部\人事首页.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="容器首页.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="登录界面.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="测试页面.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="财务部\财务首页.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="信息技术部\信息首页.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="信息技术部\账号管理a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="财务部\资金调度a.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="财务部\资金调度b.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="财务部\资金调度c.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>
