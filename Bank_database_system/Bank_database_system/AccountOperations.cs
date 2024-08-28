@@ -8,11 +8,10 @@ namespace Bank_database_system
      */
     public static class AccountOperations
     {
-        // 进行账户操作时的操作数
         public enum OperateNumber
         {
-            Freeze, // 冻结
-            Unfreeze, // 解冻
+            freeze, // 冻结
+            unfreeze, // 解冻
             accountClosure // 销户
         };
 
@@ -20,25 +19,7 @@ namespace Bank_database_system
                 @"Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=47.96.39.153)(PORT=1521))(CONNECT_DATA=(SID=orcl)));
                 User Id=system;Password=Tongji123456;";
 
-        // 显示银行卡查询的结果
-        public static void BankCardInquiryResult(string bankCardID)
-        {
-            DataTable accountTable = BankCardInquiry(bankCardID);
-
-            // 处理查询结果
-            if (accountTable.Rows.Count == 0)
-            {
-                MessageBox.Show("查询失败");
-            }
-            // 获取其他字段的值并处理
-            foreach (DataRow row in accountTable.Rows)
-            {
-                MessageBox.Show($"Credit Card Number: {row["CREDIT_CARD_NUMBERS"]}\n" +
-                    $" Identification Number: {row["IDENTIFICATION_NUMBER"]}");
-            }
-        }
-
-        // 银行卡查询的步骤
+        // 银行卡查询
         public static DataTable BankCardInquiry(string bankCardID)
         {
             // 返回的表
@@ -96,12 +77,12 @@ namespace Bank_database_system
                     string state = "";
                     switch (operate)
                     {
-                        case OperateNumber.Freeze:
+                        case OperateNumber.freeze:
                             operateQuery = @"UPDATE ACCOUNT SET STATE = :state 
                                             WHERE CREDIT_CARD_NUMBERS = :bankCardID";
                             state = "冻结";
                             break;
-                        case OperateNumber.Unfreeze:
+                        case OperateNumber.unfreeze:
                             operateQuery = @"UPDATE ACCOUNT SET STATE = :state 
                                             WHERE CREDIT_CARD_NUMBERS = :bankCardID";
                             state = "正常";
@@ -148,26 +129,8 @@ namespace Bank_database_system
             }
         }
 
-        // 显示用户查询的结果
-        public static void CustomerInquiryResult(string ID)
-        {
-            DataTable dataTable = CustomerInquiry(ID);
-            if (dataTable.Rows.Count == 0)
-            {
-                MessageBox.Show("查询失败");
-            }
-            // 获取字段的值并处理
-            foreach (DataRow row in dataTable.Rows)
-            {
-                MessageBox.Show($" ID: {row["IDENTIFICATION_NUMBER"]}\n" +
-                    $" Name: {row["CUSTOMER_NAME"]}\n" +
-                    $" Address: {row["CUSTOMER_ADDRESS"]}\n" +
-                    $" Phone Number: {row["CUSTOMER_PHONENUMBER"]}");
-            }
-        }
-
-        // 用户查询的步骤
-        private static DataTable CustomerInquiry(string ID)
+        // 使用ID进行用户查询
+        public static DataTable CustomerInquiryByID(string ID)
         {
             // 返回的表
             DataTable dataTable = new DataTable();
@@ -180,7 +143,7 @@ namespace Bank_database_system
                     connection.Open();
 
                     // 数据库操作
-                    string selectQuery = "SELECT * FROM CUSTOMER WHERE IDENTIFICATION_NUMBER = :ID";
+                    string selectQuery = "SELECT * FROM PERSONAL_INFORMATION WHERE IDENTIFICATION_NUMBER = :ID";
                     using (OracleCommand command = new OracleCommand(selectQuery, connection))
                     {
                         OracleParameter param = new OracleParameter(":ID", OracleDbType.Varchar2);
@@ -209,6 +172,70 @@ namespace Bank_database_system
                 return new DataTable();
             }
         }
+
+        // 使用其他属性筛选用户
+        public static DataTable CustomerInquiry(string ID, string name, string address, string phoneNumber)
+        {
+            if (!string.IsNullOrEmpty(ID))
+            {
+                return CustomerInquiryByID(ID);
+            }
+
+            DataTable dataTable = new DataTable();
+            using (OracleConnection connection = new OracleConnection(connectionString))
+            {
+                connection.Open();
+                string selectQuery = "SELECT * FROM PERSONAL_INFORMATION WHERE 1=1";
+
+                if (!string.IsNullOrEmpty(name))
+                {
+                    selectQuery += " AND NAME = :name";
+                }
+                if (!string.IsNullOrEmpty(address))
+                {
+                    selectQuery += " AND ADDRESS = :address";
+                }
+                if (!string.IsNullOrEmpty(phoneNumber))
+                {
+                    selectQuery += " AND PHONENUMBER = :phoneNumber";
+                }
+
+                using (OracleCommand command = new OracleCommand(selectQuery, connection))
+                {
+                    if (!string.IsNullOrEmpty(name))
+                    {
+                        command.Parameters.Add(new OracleParameter("name", OracleDbType.Varchar2) { Value = name });
+                    }
+                    if (!string.IsNullOrEmpty(address))
+                    {
+                        command.Parameters.Add(new OracleParameter("address", OracleDbType.Varchar2) { Value = address });
+                    }
+                    if (!string.IsNullOrEmpty(phoneNumber))
+                    {
+                        command.Parameters.Add(new OracleParameter("phoneNumber", OracleDbType.Varchar2) { Value = phoneNumber });
+                    }
+
+                    using (OracleDataAdapter dataAdapter = new OracleDataAdapter(command))
+                    {
+                        try
+                        {
+                            dataAdapter.Fill(dataTable);
+                        }
+                        catch (OracleException ex)
+                        {
+                            Console.WriteLine("Oracle error: " + ex.Message);
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("General error: " + ex.Message);
+                        }
+                    }
+                }
+            }
+
+            return dataTable;
+        }
+
 
         // 用户插入
         public static bool CustomerInsert(string ID, string name, string address, string phoneNumber)
@@ -306,10 +333,10 @@ namespace Bank_database_system
             }
         }
 
-        // 填写个人详细信息的银行卡办理
+        // 银行卡办理
         public static bool BankCardProcessing(string branchID, string ID, string name, string address, string phoneNumber, string InitialPassword)
         {
-            if (CustomerInquiry(ID).Rows.Count == 0)
+            if (CustomerInquiryByID(ID).Rows.Count == 0)
             {
                 if (!CustomerInsert(ID, name, address, phoneNumber))
                 {
@@ -318,7 +345,7 @@ namespace Bank_database_system
             }
 
             string bankCardID = BankAccountGenerator.GenerateUniqueCardID();
-            string hashPassword = PasswordHandler.HashPassword(InitialPassword); // 密码加密
+            string hashPassword = PasswordHandler.HashPassword(InitialPassword);
             DateTime openDate = GetCurrentTime();
 
             try
@@ -391,13 +418,13 @@ namespace Bank_database_system
             string cardNumber;
             do
             {
-                cardNumber = GenerateRandomCardID();
+                cardNumber = GenerateRandom20ID();
             } while (AccountOperations.BankCardInquiry(cardNumber).Rows.Count > 0);
 
             return cardNumber;
         }
 
-        private static string GenerateRandomCardID()
+        public static string GenerateRandom20ID()
         {
             // 生成20位随机数字串
             const int cardNumberLength = 20;
