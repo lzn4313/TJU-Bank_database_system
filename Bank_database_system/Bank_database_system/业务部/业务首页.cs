@@ -80,5 +80,10 @@ namespace Bank_database_system.业务部
                 this.Close();
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

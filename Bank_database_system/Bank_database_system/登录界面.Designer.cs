@@ -117,7 +117,7 @@
             button1.Location = new Point(878, 402);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(248, 162);
+            button1.Size = new Size(248, 89);
             button1.TabIndex = 10;
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click_1;

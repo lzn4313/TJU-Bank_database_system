@@ -63,6 +63,16 @@ namespace Bank_database_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap head {
+            get {
+                object obj = ResourceManager.GetObject("head", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap p1 {
             get {
                 object obj = ResourceManager.GetObject("p1", resourceCulture);
@@ -323,6 +333,36 @@ namespace Bank_database_system.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap 业务部门 {
+            get {
+                object obj = ResourceManager.GetObject("业务部门", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 人事部门 {
+            get {
+                object obj = ResourceManager.GetObject("人事部门", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 信息技术部门 {
+            get {
+                object obj = ResourceManager.GetObject("信息技术部门", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap 图片1 {
             get {
                 object obj = ResourceManager.GetObject("图片1", resourceCulture);
@@ -346,6 +386,16 @@ namespace Bank_database_system.Properties {
         internal static System.Drawing.Bitmap 图片3 {
             get {
                 object obj = ResourceManager.GetObject("图片3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 财务部门 {
+            get {
+                object obj = ResourceManager.GetObject("财务部门", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
