@@ -1,7 +1,7 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System.Data;
 
-namespace Bank_database_system
+namespace AccountOperations
 {
     /*
      * AccountOperations类中包含账户操作的函数，函数中的所有的MessageBox显示信息都是暂时调试用的
