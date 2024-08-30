@@ -1,82 +1,85 @@
 ﻿using System;
 using Oracle.ManagedDataAccess.Client;
 
-public static class LoanCalculator
+namespace LoanCalculator
 {
-    private const string connectionString =
-        "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=47.96.39.153)(PORT=1521))(CONNECT_DATA=(SID=orcl)));" +
-        "User Id=system;Password=Tongji123456;";
-
-    public enum RepaymentType
+    public static class LoanCalculator
     {
-        EqualPrincipalAndInterest, // 等额本息
-        EqualPrincipal // 等额本金
-    }
+        private const string connectionString =
+            "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=47.96.39.153)(PORT=1521))(CONNECT_DATA=(SID=orcl)));" +
+            "User Id=system;Password=Tongji123456;";
 
-    public static decimal[] CalculateMonthlyRepayment(decimal principal, int years, RepaymentType repaymentType)
-    {
-        try
+        public enum RepaymentType
         {
-            using (OracleConnection connection = new OracleConnection(connectionString))
-            {
-                connection.Open();
+            EqualPrincipalAndInterest, // 等额本息
+            EqualPrincipal // 等额本金
+        }
 
-                // 获取贷款利率
-                string query = @"
+        public static decimal[] CalculateMonthlyRepayment(decimal principal, int years, RepaymentType repaymentType)
+        {
+            try
+            {
+                using (OracleConnection connection = new OracleConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // 获取贷款利率
+                    string query = @"
                 SELECT INTEREST_RATE 
                 FROM LOAN_INTEREST_RATE 
                 WHERE :principal BETWEEN LOAN_AMOUNT_MIN AND LOAN_AMOUNT_MAX
                   AND :years BETWEEN LOAN_YEARS_MIN AND LOAN_YEARS_MAX";
 
-                using (OracleCommand command = new OracleCommand(query, connection))
-                {
-                    command.Parameters.Add(new OracleParameter("principal", principal));
-                    command.Parameters.Add(new OracleParameter("years", years));
-
-                    object result = command.ExecuteScalar();
-                    if (result != null)
+                    using (OracleCommand command = new OracleCommand(query, connection))
                     {
-                        decimal annualInterestRate = Convert.ToDecimal(result);
-                        decimal monthlyInterestRate = annualInterestRate / 12 / 100;
-                        int totalMonths = years * 12;
+                        command.Parameters.Add(new OracleParameter("principal", principal));
+                        command.Parameters.Add(new OracleParameter("years", years));
 
-                        decimal[] monthlyRepayments = new decimal[totalMonths];
-
-                        if (repaymentType == RepaymentType.EqualPrincipalAndInterest)
+                        object result = command.ExecuteScalar();
+                        if (result != null)
                         {
-                            // 等额本息还款法
-                            decimal monthlyRepayment = principal * monthlyInterestRate * (decimal)Math.Pow(1 + (double)monthlyInterestRate, totalMonths) /
-                                                    ((decimal)Math.Pow(1 + (double)monthlyInterestRate, totalMonths) - 1);
+                            decimal annualInterestRate = Convert.ToDecimal(result);
+                            decimal monthlyInterestRate = annualInterestRate / 12 / 100;
+                            int totalMonths = years * 12;
 
-                            for (int i = 0; i < totalMonths; i++)
+                            decimal[] monthlyRepayments = new decimal[totalMonths];
+
+                            if (repaymentType == RepaymentType.EqualPrincipalAndInterest)
                             {
-                                monthlyRepayments[i] = monthlyRepayment;
+                                // 等额本息还款法
+                                decimal monthlyRepayment = principal * monthlyInterestRate * (decimal)Math.Pow(1 + (double)monthlyInterestRate, totalMonths) /
+                                                        ((decimal)Math.Pow(1 + (double)monthlyInterestRate, totalMonths) - 1);
+
+                                for (int i = 0; i < totalMonths; i++)
+                                {
+                                    monthlyRepayments[i] = monthlyRepayment;
+                                }
                             }
+                            else if (repaymentType == RepaymentType.EqualPrincipal)
+                            {
+                                // 等额本金还款法
+                                decimal principalRepayment = principal / totalMonths;
+
+                                for (int i = 0; i < totalMonths; i++)
+                                {
+                                    monthlyRepayments[i] = principalRepayment + (principal - principalRepayment * i) * monthlyInterestRate;
+                                }
+                            }
+
+                            return monthlyRepayments;
                         }
-                        else if (repaymentType == RepaymentType.EqualPrincipal)
+                        else
                         {
-                            // 等额本金还款法
-                            decimal principalRepayment = principal / totalMonths;
-
-                            for (int i = 0; i < totalMonths; i++)
-                            {
-                                monthlyRepayments[i] = principalRepayment + (principal - principalRepayment * i) * monthlyInterestRate;
-                            }
+                            throw new Exception("未找到合适的利率");
                         }
-
-                        return monthlyRepayments;
-                    }
-                    else
-                    {
-                        throw new Exception("未找到合适的利率");
                     }
                 }
             }
-        }
-        catch (Exception ex)
-        {
-            // Console.WriteLine("Error: " + ex.Message);
-            return new decimal[0];
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+                return new decimal[0];
+            }
         }
     }
 }
