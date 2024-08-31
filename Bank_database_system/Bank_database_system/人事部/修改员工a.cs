@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Bank_database_system
 {
@@ -18,6 +19,7 @@ namespace Bank_database_system
         {
             InitializeComponent();
             cha_emplyinf_c.ButtonBack += BackToA;
+            dataGridView1.DataSource = HR.HRtable(string.Empty, string.Empty, string.Empty, string.Empty);
         }
         private void BackToA(object sender, EventArgs e)
         {
@@ -37,6 +39,44 @@ namespace Bank_database_system
         {
 
         }
-        
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox5.Clear();
+            comboBox1.ResetText();
+            dataGridView1.DataSource = HR.HRtable(string.Empty, string.Empty, string.Empty, string.Empty);
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(cha_emplyinf_c);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = HR.HRtable(textBox5.Text, textBox2.Text, textBox1.Text, comboBox1.Text);
+        }
     }
 }

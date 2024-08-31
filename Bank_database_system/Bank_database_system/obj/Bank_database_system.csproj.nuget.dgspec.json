@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Leno\\Desktop\\ku\\ku\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj": {}
+    "D:\\桌面\\STUDY\\大二下\\数据库\\数据库设计\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Leno\\Desktop\\ku\\ku\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj": {
+    "D:\\桌面\\STUDY\\大二下\\数据库\\数据库设计\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Leno\\Desktop\\ku\\ku\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
+        "projectUniqueName": "D:\\桌面\\STUDY\\大二下\\数据库\\数据库设计\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
         "projectName": "Bank_database_system",
-        "projectPath": "C:\\Users\\Leno\\Desktop\\ku\\ku\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
-        "packagesPath": "C:\\Users\\Leno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Leno\\Desktop\\ku\\ku\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\obj\\",
+        "projectPath": "D:\\桌面\\STUDY\\大二下\\数据库\\数据库设计\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\Bank_database_system.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "D:\\桌面\\STUDY\\大二下\\数据库\\数据库设计\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Leno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -69,7 +69,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            textBox10 = new TextBox();
-            label10 = new Label();
-            textBox9 = new TextBox();
             label9 = new Label();
             textBox8 = new TextBox();
             label8 = new Label();
@@ -46,6 +43,9 @@
             textBox3 = new TextBox();
             label3 = new Label();
             button2 = new Button();
+            comboBox1 = new ComboBox();
+            textBox1 = new TextBox();
+            label1 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -61,44 +61,12 @@
             button1.Text = "确认修改";
             button1.UseVisualStyleBackColor = false;
             // 
-            // textBox10
-            // 
-            textBox10.BackColor = SystemColors.Info;
-            textBox10.Font = new Font("Microsoft YaHei UI", 22F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox10.Location = new Point(546, 419);
-            textBox10.Margin = new Padding(2);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(196, 45);
-            textBox10.TabIndex = 99;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = SystemColors.ActiveCaption;
-            label10.Font = new Font("楷体", 22F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label10.Location = new Point(403, 427);
-            label10.Margin = new Padding(2, 0, 2, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(137, 30);
-            label10.TabIndex = 98;
-            label10.Text = "系统秘钥";
-            // 
-            // textBox9
-            // 
-            textBox9.BackColor = SystemColors.Info;
-            textBox9.Font = new Font("Microsoft YaHei UI", 22F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox9.Location = new Point(546, 339);
-            textBox9.Margin = new Padding(2);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(196, 45);
-            textBox9.TabIndex = 97;
-            // 
             // label9
             // 
             label9.AutoSize = true;
             label9.BackColor = SystemColors.ActiveCaption;
             label9.Font = new Font("楷体", 22F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label9.Location = new Point(403, 347);
+            label9.Location = new Point(402, 418);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(139, 30);
@@ -114,6 +82,8 @@
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(196, 45);
             textBox8.TabIndex = 95;
+            textBox8.TextChanged += textBox8_TextChanged;
+            textBox8.KeyPress += textBox8_KeyPress;
             // 
             // label8
             // 
@@ -123,9 +93,9 @@
             label8.Location = new Point(403, 268);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(137, 30);
+            label8.Size = new Size(139, 30);
             label8.TabIndex = 94;
-            label8.Text = "电话号码";
+            label8.Text = " 身份ID ";
             // 
             // textBox7
             // 
@@ -136,6 +106,7 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(196, 45);
             textBox7.TabIndex = 93;
+            textBox7.KeyPress += textBox7_KeyPress;
             // 
             // label7
             // 
@@ -202,6 +173,7 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(196, 45);
             textBox4.TabIndex = 87;
+            textBox4.KeyPress += textBox4_KeyPress;
             // 
             // label4
             // 
@@ -224,6 +196,8 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(196, 45);
             textBox3.TabIndex = 85;
+            textBox3.TextChanged += textBox3_TextChanged;
+            textBox3.KeyPress += textBox3_KeyPress;
             // 
             // label3
             // 
@@ -250,16 +224,49 @@
             button2.Text = "返回";
             button2.UseVisualStyleBackColor = false;
             // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = SystemColors.Info;
+            comboBox1.Font = new Font("Microsoft YaHei UI", 22.125F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "财务部", "人事部", "信息技术部", "业务部" });
+            comboBox1.Location = new Point(546, 418);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(195, 46);
+            comboBox1.TabIndex = 194;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = SystemColors.Info;
+            textBox1.Font = new Font("Microsoft YaHei UI", 22F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            textBox1.Location = new Point(545, 339);
+            textBox1.Margin = new Padding(2);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(196, 45);
+            textBox1.TabIndex = 196;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.ActiveCaption;
+            label1.Font = new Font("楷体", 22F, FontStyle.Bold, GraphicsUnit.Point, 134);
+            label1.Location = new Point(402, 347);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(137, 30);
+            label1.TabIndex = 195;
+            label1.Text = "电话号码";
+            // 
             // 修改员工b
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
+            Controls.Add(textBox1);
+            Controls.Add(label1);
+            Controls.Add(comboBox1);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox10);
-            Controls.Add(label10);
-            Controls.Add(textBox9);
             Controls.Add(label9);
             Controls.Add(textBox8);
             Controls.Add(label8);
@@ -282,9 +289,6 @@
         #endregion
 
         private Button button1;
-        private TextBox textBox10;
-        private Label label10;
-        private TextBox textBox9;
         private Label label9;
         private TextBox textBox8;
         private Label label8;
@@ -299,5 +303,8 @@
         private TextBox textBox3;
         private Label label3;
         private Button button2;
+        private ComboBox comboBox1;
+        private TextBox textBox1;
+        private Label label1;
     }
 }

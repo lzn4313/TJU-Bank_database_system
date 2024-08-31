@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             button1 = new Button();
@@ -49,8 +48,8 @@
             textBox5 = new TextBox();
             label8 = new Label();
             label2 = new Label();
-            button3 = new Button();
             panel1 = new Panel();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -64,16 +63,6 @@
             label1.Size = new Size(428, 21);
             label1.TabIndex = 188;
             label1.Text = "      姓名            工号            支行                部门            ";
-            // 
-            // textBox3
-            // 
-            textBox3.BackColor = SystemColors.Info;
-            textBox3.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox3.Location = new Point(502, 221);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(213, 31);
-            textBox3.TabIndex = 187;
             // 
             // textBox2
             // 
@@ -99,24 +88,26 @@
             // 
             button1.BackColor = SystemColors.ActiveCaption;
             button1.Font = new Font("Microsoft YaHei UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            button1.Location = new Point(507, 70);
+            button1.Location = new Point(480, 94);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(105, 48);
             button1.TabIndex = 184;
             button1.Text = "筛选";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.Font = new Font("Microsoft YaHei UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            button2.Location = new Point(371, 70);
+            button2.Location = new Point(344, 94);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(105, 48);
             button2.TabIndex = 183;
             button2.Text = "重置";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label10
             // 
@@ -257,6 +248,8 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(213, 31);
             textBox5.TabIndex = 170;
+            textBox5.TextChanged += textBox5_TextChanged;
+            textBox5.KeyPress += textBox5_KeyPress;
             // 
             // label8
             // 
@@ -274,30 +267,32 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("黑体", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label2.Location = new Point(76, 77);
+            label2.Location = new Point(19, 101);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(137, 29);
             label2.TabIndex = 168;
             label2.Text = "筛选条件";
             // 
-            // button3
-            // 
-            button3.Location = new Point(502, 359);
-            button3.Name = "button3";
-            button3.Size = new Size(200, 49);
-            button3.TabIndex = 189;
-            button3.Text = "修改（测试前端用）";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
             // panel1
             // 
-            panel1.Location = new Point(0, 0);
+            panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(779, 750);
             panel1.TabIndex = 190;
             panel1.Visible = false;
+            panel1.Paint += panel1_Paint;
+            // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = SystemColors.Info;
+            comboBox1.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "财务部", "人事部", "信息技术部", "业务部" });
+            comboBox1.Location = new Point(502, 219);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(213, 32);
+            comboBox1.TabIndex = 194;
             // 
             // 修改员工a
             // 
@@ -305,9 +300,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             Controls.Add(panel1);
-            Controls.Add(button3);
             Controls.Add(label1);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(button1);
@@ -327,6 +320,7 @@
             Controls.Add(textBox5);
             Controls.Add(label8);
             Controls.Add(label2);
+            Controls.Add(comboBox1);
             Name = "修改员工a";
             Size = new Size(779, 750);
             Load += 修改员工a_Load;
@@ -338,7 +332,6 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
         private Button button1;
@@ -358,7 +351,7 @@
         private TextBox textBox5;
         private Label label8;
         private Label label2;
-        private Button button3;
         private Panel panel1;
+        private ComboBox comboBox1;
     }
 }
