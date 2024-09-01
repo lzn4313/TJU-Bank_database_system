@@ -32,7 +32,6 @@
             label10 = new Label();
             textBox9 = new TextBox();
             label9 = new Label();
-            textBox6 = new TextBox();
             label3 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
@@ -40,6 +39,7 @@
             dataGridView1 = new DataGridView();
             button8 = new Button();
             button9 = new Button();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -74,6 +74,7 @@
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(213, 31);
             textBox9.TabIndex = 164;
+            textBox9.KeyPress += textBox9_KeyPress;
             // 
             // label9
             // 
@@ -86,16 +87,6 @@
             label9.Size = new Size(139, 29);
             label9.TabIndex = 163;
             label9.Text = " 员工ID ";
-            // 
-            // textBox6
-            // 
-            textBox6.BackColor = SystemColors.Info;
-            textBox6.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox6.Location = new Point(495, 182);
-            textBox6.Margin = new Padding(2);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(213, 31);
-            textBox6.TabIndex = 162;
             // 
             // label3
             // 
@@ -179,18 +170,29 @@
             button9.Text = "确认";
             button9.UseVisualStyleBackColor = false;
             // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = SystemColors.Info;
+            comboBox1.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "财务部", "人事部", "信息技术部", "业务部" });
+            comboBox1.Location = new Point(495, 181);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(213, 32);
+            comboBox1.TabIndex = 194;
+            // 
             // 支行信息b
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
+            Controls.Add(comboBox1);
             Controls.Add(button9);
             Controls.Add(button8);
             Controls.Add(textBox10);
             Controls.Add(label10);
             Controls.Add(textBox9);
             Controls.Add(label9);
-            Controls.Add(textBox6);
             Controls.Add(label3);
             Controls.Add(textBox1);
             Controls.Add(label2);
@@ -210,7 +212,6 @@
         private Label label10;
         private TextBox textBox9;
         private Label label9;
-        private TextBox textBox6;
         private Label label3;
         private TextBox textBox1;
         private Label label2;
@@ -218,5 +219,6 @@
         private DataGridView dataGridView1;
         private Button button8;
         private Button button9;
+        private ComboBox comboBox1;
     }
 }

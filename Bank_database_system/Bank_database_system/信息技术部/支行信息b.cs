@@ -15,7 +15,7 @@ namespace Bank_database_system
     {
         // 定义一个事件，用于通知父控件
         public event EventHandler ButtonBack;
-        
+
         public 支行信息b()
         {
             InitializeComponent();
@@ -31,6 +31,14 @@ namespace Bank_database_system
         private void 支行信息b_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox9_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

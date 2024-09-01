@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             button1 = new Button();
@@ -51,18 +50,9 @@
             button3 = new Button();
             dataGridView1 = new DataGridView();
             label1 = new Label();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // textBox3
-            // 
-            textBox3.BackColor = SystemColors.Info;
-            textBox3.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox3.Location = new Point(502, 177);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(213, 31);
-            textBox3.TabIndex = 187;
             // 
             // textBox2
             // 
@@ -106,6 +96,7 @@
             button2.TabIndex = 183;
             button2.Text = "重置";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label10
             // 
@@ -126,6 +117,7 @@
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(35, 23);
             textBox6.TabIndex = 181;
+            textBox6.KeyPress += textBox6_KeyPress;
             // 
             // label9
             // 
@@ -179,6 +171,8 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(36, 23);
             textBox7.TabIndex = 176;
+            textBox7.TextChanged += textBox7_TextChanged;
+            textBox7.KeyPress += textBox7_KeyPress;
             // 
             // label12
             // 
@@ -236,6 +230,8 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(213, 31);
             textBox5.TabIndex = 170;
+            textBox5.TextChanged += textBox5_TextChanged;
+            textBox5.KeyPress += textBox5_KeyPress;
             // 
             // label8
             // 
@@ -304,16 +300,28 @@
             label1.TabIndex = 192;
             label1.Text = "姓名          ID          月工资              收款账号          选中状态 ";
             // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = SystemColors.Info;
+            comboBox1.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "财务部", "人事部", "信息技术部", "业务部" });
+            comboBox1.Location = new Point(503, 175);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(213, 32);
+            comboBox1.TabIndex = 193;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
             // 工资发放a
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
+            Controls.Add(comboBox1);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Controls.Add(button3);
             Controls.Add(button9);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(button1);
@@ -340,7 +348,6 @@
         }
 
         #endregion
-        private TextBox textBox3;
         private TextBox textBox2;
         private TextBox textBox1;
         private Button button1;
@@ -363,5 +370,6 @@
         private Button button3;
         private DataGridView dataGridView1;
         private Label label1;
+        private ComboBox comboBox1;
     }
 }

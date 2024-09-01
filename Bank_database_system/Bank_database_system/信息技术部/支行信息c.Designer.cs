@@ -32,21 +32,19 @@
             label10 = new Label();
             textBox9 = new TextBox();
             label9 = new Label();
-            textBox6 = new TextBox();
             label3 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
-            button9 = new Button();
-            button8 = new Button();
             button1 = new Button();
             button2 = new Button();
+            comboBox1 = new ComboBox();
             SuspendLayout();
             // 
             // textBox10
             // 
             textBox10.BackColor = SystemColors.Info;
             textBox10.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox10.Location = new Point(220, 250);
+            textBox10.Location = new Point(219, 217);
             textBox10.Margin = new Padding(2);
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(213, 31);
@@ -57,7 +55,7 @@
             label10.AutoSize = true;
             label10.BackColor = SystemColors.ActiveCaption;
             label10.Font = new Font("楷体", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label10.Location = new Point(77, 252);
+            label10.Location = new Point(76, 219);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new Size(137, 29);
@@ -68,40 +66,31 @@
             // 
             textBox9.BackColor = SystemColors.Info;
             textBox9.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox9.Location = new Point(220, 186);
+            textBox9.Location = new Point(219, 153);
             textBox9.Margin = new Padding(2);
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(213, 31);
             textBox9.TabIndex = 164;
+            textBox9.KeyPress += textBox9_KeyPress;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.BackColor = SystemColors.ActiveCaption;
             label9.Font = new Font("楷体", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label9.Location = new Point(77, 188);
+            label9.Location = new Point(76, 155);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(139, 29);
             label9.TabIndex = 163;
             label9.Text = " 员工ID ";
             // 
-            // textBox6
-            // 
-            textBox6.BackColor = SystemColors.Info;
-            textBox6.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox6.Location = new Point(533, 250);
-            textBox6.Margin = new Padding(2);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(213, 31);
-            textBox6.TabIndex = 162;
-            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = SystemColors.ActiveCaption;
             label3.Font = new Font("楷体", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label3.Location = new Point(454, 252);
+            label3.Location = new Point(453, 219);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(75, 29);
@@ -112,7 +101,7 @@
             // 
             textBox1.BackColor = SystemColors.Info;
             textBox1.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox1.Location = new Point(533, 186);
+            textBox1.Location = new Point(532, 153);
             textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(213, 31);
@@ -123,40 +112,12 @@
             label2.AutoSize = true;
             label2.BackColor = SystemColors.ActiveCaption;
             label2.Font = new Font("楷体", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label2.Location = new Point(454, 188);
+            label2.Location = new Point(453, 155);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(75, 29);
             label2.TabIndex = 159;
             label2.Text = "姓名";
-            // 
-            // button9
-            // 
-            button9.BackColor = SystemColors.ControlLightLight;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button9.ForeColor = SystemColors.ControlText;
-            button9.Location = new Point(77, 109);
-            button9.Margin = new Padding(2);
-            button9.Name = "button9";
-            button9.Size = new Size(103, 47);
-            button9.TabIndex = 158;
-            button9.Text = "修改信息";
-            button9.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            button8.BackColor = Color.FromArgb(128, 128, 255);
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            button8.ForeColor = SystemColors.ControlLightLight;
-            button8.Location = new Point(208, 109);
-            button8.Margin = new Padding(2);
-            button8.Name = "button8";
-            button8.Size = new Size(104, 47);
-            button8.TabIndex = 157;
-            button8.Text = "新增支行";
-            button8.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -185,23 +146,32 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = SystemColors.Info;
+            comboBox1.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "财务部", "人事部", "信息技术部", "业务部" });
+            comboBox1.Location = new Point(533, 217);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(213, 32);
+            comboBox1.TabIndex = 194;
+            // 
             // 支行信息c
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
+            Controls.Add(comboBox1);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox10);
             Controls.Add(label10);
             Controls.Add(textBox9);
             Controls.Add(label9);
-            Controls.Add(textBox6);
             Controls.Add(label3);
             Controls.Add(textBox1);
             Controls.Add(label2);
-            Controls.Add(button9);
-            Controls.Add(button8);
             Name = "支行信息c";
             Size = new Size(779, 750);
             Load += 支行信息c_Load;
@@ -215,13 +185,11 @@
         private Label label10;
         private TextBox textBox9;
         private Label label9;
-        private TextBox textBox6;
         private Label label3;
         private TextBox textBox1;
         private Label label2;
-        private Button button9;
-        private Button button8;
         private Button button1;
         private Button button2;
+        private ComboBox comboBox1;
     }
 }

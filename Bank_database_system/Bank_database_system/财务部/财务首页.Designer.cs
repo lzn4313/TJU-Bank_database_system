@@ -77,7 +77,7 @@
             // 
             button2.FlatStyle = FlatStyle.Flat;
             button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Image = Properties.Resources.p13;
             button2.Location = new Point(192, 146);
             button2.Margin = new Padding(2);
             button2.Name = "button2";

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Bank_database_system
 {
@@ -29,7 +30,9 @@ namespace Bank_database_system
         }
         private void button9_Click(object sender, EventArgs e)
         {
-
+            panel1.Visible = true;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(branch_inf_b);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -39,9 +42,7 @@ namespace Bank_database_system
 
         private void button3_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            panel1.Controls.Clear();
-            panel1.Controls.Add(branch_inf_b);
+
         }
 
         private void 支行信息a_Load(object sender, EventArgs e)
@@ -54,6 +55,33 @@ namespace Bank_database_system
             panel1.Visible = true;
             panel1.Controls.Clear();
             panel1.Controls.Add(branch_inf_c);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+            textBox9.Clear();
+            textBox10.Clear();
+            comboBox2.Text = null;
+            dataGridView1.DataSource = null;
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

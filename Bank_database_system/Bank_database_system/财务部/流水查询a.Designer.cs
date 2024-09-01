@@ -38,8 +38,6 @@
             label12 = new Label();
             label7 = new Label();
             dataGridView1 = new DataGridView();
-            label6 = new Label();
-            label5 = new Label();
             label4 = new Label();
             textBox5 = new TextBox();
             label8 = new Label();
@@ -49,8 +47,6 @@
             button1 = new Button();
             button2 = new Button();
             textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -73,6 +69,8 @@
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(35, 23);
             textBox6.TabIndex = 139;
+            textBox6.TextChanged += textBox6_TextChanged;
+            textBox6.KeyPress += textBox6_KeyPress;
             // 
             // label9
             // 
@@ -126,6 +124,8 @@
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(36, 23);
             textBox7.TabIndex = 134;
+            textBox7.TextChanged += textBox7_TextChanged;
+            textBox7.KeyPress += textBox7_KeyPress;
             // 
             // label12
             // 
@@ -159,63 +159,41 @@
             dataGridView1.Size = new Size(662, 310);
             dataGridView1.TabIndex = 128;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = SystemColors.ActiveCaption;
-            label6.Font = new Font("楷体", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label6.Location = new Point(401, 211);
-            label6.Margin = new Padding(2, 0, 2, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(75, 29);
-            label6.TabIndex = 127;
-            label6.Text = "部门";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = SystemColors.ActiveCaption;
-            label5.Font = new Font("楷体", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label5.Location = new Point(54, 211);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(107, 29);
-            label5.TabIndex = 126;
-            label5.Text = " 支行 ";
-            // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = SystemColors.ActiveCaption;
             label4.Font = new Font("楷体", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label4.Location = new Point(401, 151);
+            label4.Location = new Point(397, 175);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(75, 29);
+            label4.Size = new Size(107, 29);
             label4.TabIndex = 125;
-            label4.Text = "姓名";
+            label4.Text = " 时间 ";
             // 
             // textBox5
             // 
             textBox5.BackColor = SystemColors.Info;
             textBox5.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox5.Location = new Point(165, 149);
+            textBox5.Location = new Point(161, 173);
             textBox5.Margin = new Padding(2);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(213, 31);
             textBox5.TabIndex = 124;
+            textBox5.TextChanged += textBox5_TextChanged;
+            textBox5.KeyPress += textBox5_KeyPress;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.BackColor = SystemColors.ActiveCaption;
             label8.Font = new Font("楷体", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 134);
-            label8.Location = new Point(54, 149);
+            label8.Location = new Point(50, 173);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(107, 29);
             label8.TabIndex = 123;
-            label8.Text = "支行ID";
+            label8.Text = "交易ID";
             // 
             // label2
             // 
@@ -272,44 +250,23 @@
             button2.TabIndex = 141;
             button2.Text = "重置";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // textBox1
             // 
             textBox1.BackColor = SystemColors.Info;
             textBox1.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox1.Location = new Point(480, 149);
+            textBox1.Location = new Point(508, 175);
             textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(213, 31);
             textBox1.TabIndex = 143;
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = SystemColors.Info;
-            textBox2.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox2.Location = new Point(165, 209);
-            textBox2.Margin = new Padding(2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(213, 31);
-            textBox2.TabIndex = 144;
-            // 
-            // textBox3
-            // 
-            textBox3.BackColor = SystemColors.Info;
-            textBox3.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox3.Location = new Point(480, 211);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(213, 31);
-            textBox3.TabIndex = 145;
             // 
             // 流水查询a
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(button2);
@@ -323,8 +280,6 @@
             Controls.Add(label12);
             Controls.Add(label7);
             Controls.Add(dataGridView1);
-            Controls.Add(label6);
-            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(textBox5);
             Controls.Add(label8);
@@ -350,8 +305,6 @@
         private Label label12;
         private Label label7;
         private DataGridView dataGridView1;
-        private Label label6;
-        private Label label5;
         private Label label4;
         private TextBox textBox5;
         private Label label8;
@@ -361,7 +314,5 @@
         private Button button1;
         private Button button2;
         private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
     }
 }

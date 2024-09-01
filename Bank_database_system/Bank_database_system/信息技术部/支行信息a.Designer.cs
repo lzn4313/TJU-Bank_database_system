@@ -44,14 +44,13 @@
             label1 = new Label();
             textBox9 = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
             label3 = new Label();
             textBox2 = new TextBox();
             label4 = new Label();
             label7 = new Label();
             dataGridView1 = new DataGridView();
-            button3 = new Button();
             panel1 = new Panel();
+            comboBox2 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -105,6 +104,7 @@
             button2.TabIndex = 151;
             button2.Text = "重置";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label10
             // 
@@ -221,6 +221,8 @@
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(213, 31);
             textBox9.TabIndex = 176;
+            textBox9.TextChanged += textBox9_TextChanged;
+            textBox9.KeyPress += textBox9_KeyPress;
             // 
             // label2
             // 
@@ -233,16 +235,6 @@
             label2.Size = new Size(139, 29);
             label2.TabIndex = 175;
             label2.Text = " 员工ID ";
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = SystemColors.Info;
-            textBox1.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox1.Location = new Point(514, 215);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(213, 31);
-            textBox1.TabIndex = 174;
             // 
             // label3
             // 
@@ -299,16 +291,6 @@
             dataGridView1.Size = new Size(689, 351);
             dataGridView1.TabIndex = 169;
             // 
-            // button3
-            // 
-            button3.Location = new Point(527, 323);
-            button3.Name = "button3";
-            button3.Size = new Size(200, 49);
-            button3.TabIndex = 179;
-            button3.Text = "修改（测试前端用）";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
             // panel1
             // 
             panel1.Location = new Point(0, 0);
@@ -318,18 +300,27 @@
             panel1.Visible = false;
             panel1.Paint += panel1_Paint;
             // 
+            // comboBox2
+            // 
+            comboBox2.BackColor = SystemColors.Info;
+            comboBox2.Font = new Font("Microsoft YaHei UI", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "财务部", "人事部", "信息技术部", "业务部" });
+            comboBox2.Location = new Point(515, 217);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(213, 32);
+            comboBox2.TabIndex = 194;
+            // 
             // 支行信息a
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             Controls.Add(panel1);
-            Controls.Add(button3);
             Controls.Add(textBox10);
             Controls.Add(label1);
             Controls.Add(textBox9);
             Controls.Add(label2);
-            Controls.Add(textBox1);
             Controls.Add(label3);
             Controls.Add(textBox2);
             Controls.Add(label4);
@@ -347,6 +338,7 @@
             Controls.Add(label12);
             Controls.Add(button9);
             Controls.Add(button8);
+            Controls.Add(comboBox2);
             Name = "支行信息a";
             Size = new Size(779, 750);
             Load += 支行信息a_Load;
@@ -373,13 +365,12 @@
         private Label label1;
         private TextBox textBox9;
         private Label label2;
-        private TextBox textBox1;
         private Label label3;
         private TextBox textBox2;
         private Label label4;
         private Label label7;
         private DataGridView dataGridView1;
-        private Button button3;
         public Panel panel1;
+        private ComboBox comboBox2;
     }
 }

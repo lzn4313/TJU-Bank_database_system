@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|d:\\\u684C\u9762\\study\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\tju-bank_database_system\\bank_database_system\\bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u4FE1\u606F\u9996\u9875.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|solutionrelative:bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u4FE1\u606F\u9996\u9875.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|d:\\\u684C\u9762\\study\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\tju-bank_database_system\\bank_database_system\\bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u8D26\u53F7\u7BA1\u7406a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|solutionrelative:bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u8D26\u53F7\u7BA1\u7406a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u8D26\u53F7\u7BA1\u7406a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{160581D4-A514-480C-A67F-4804714DD268}|Bank_database_system\\Bank_database_system.csproj|solutionrelative:bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u8D26\u53F7\u7BA1\u7406a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 401,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\u4FE1\u606F\u9996\u9875.cs",
+              "DocumentMoniker": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u4FE1\u606F\u9996\u9875.cs",
+              "RelativeDocumentMoniker": "Bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u4FE1\u606F\u9996\u9875.cs",
+              "ToolTip": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u4FE1\u606F\u9996\u9875.cs",
+              "RelativeToolTip": "Bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u4FE1\u606F\u9996\u9875.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAA1wCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T04:18:03.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "\u8D26\u53F7\u7BA1\u7406a.cs",
+              "DocumentMoniker": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u8D26\u53F7\u7BA1\u7406a.cs",
+              "RelativeDocumentMoniker": "Bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u8D26\u53F7\u7BA1\u7406a.cs",
+              "ToolTip": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u8D26\u53F7\u7BA1\u7406a.cs",
+              "RelativeToolTip": "Bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u8D26\u53F7\u7BA1\u7406a.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAADwvxUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T04:13:56.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "\u8D26\u53F7\u7BA1\u7406a.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u8D26\u53F7\u7BA1\u7406a.cs",
+              "RelativeDocumentMoniker": "Bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u8D26\u53F7\u7BA1\u7406a.cs",
+              "ToolTip": "D:\\\u684C\u9762\\STUDY\\\u5927\u4E8C\u4E0B\\\u6570\u636E\u5E93\\\u6570\u636E\u5E93\u8BBE\u8BA1\\TJU-Bank_database_system\\Bank_database_system\\Bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u8D26\u53F7\u7BA1\u7406a.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "Bank_database_system\\\u4FE1\u606F\u6280\u672F\u90E8\\\u8D26\u53F7\u7BA1\u7406a.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T04:13:52.212Z"
             }
           ]
         }

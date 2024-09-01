@@ -26,7 +26,15 @@ namespace Bank_database_system
 
         private void 支行信息c_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void textBox9_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

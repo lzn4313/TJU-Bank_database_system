@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
             label8 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -39,28 +38,26 @@
             button8 = new Button();
             label7 = new Label();
             label1 = new Label();
-            textBox2 = new TextBox();
             textBox3 = new TextBox();
             textBox4 = new TextBox();
+            comboBox1 = new ComboBox();
+            dataGridView1 = new DataGridView();
+            label10 = new Label();
+            textBox6 = new TextBox();
+            label9 = new Label();
+            button13 = new Button();
+            button12 = new Button();
+            label11 = new Label();
+            textBox7 = new TextBox();
+            label12 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(24, 334);
-            dataGridView1.Margin = new Padding(2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.Size = new Size(731, 391);
-            dataGridView1.TabIndex = 58;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft YaHei UI", 16F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            label8.Location = new Point(24, 279);
+            label8.Location = new Point(80, 275);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(614, 30);
@@ -113,6 +110,8 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(198, 45);
             textBox1.TabIndex = 50;
+            textBox1.TextChanged += textBox1_TextChanged;
+            textBox1.KeyPress += textBox1_KeyPress;
             // 
             // label3
             // 
@@ -148,6 +147,7 @@
             button8.TabIndex = 47;
             button8.Text = "重置";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // label7
             // 
@@ -172,16 +172,6 @@
             label1.TabIndex = 45;
             label1.Text = "ID：";
             // 
-            // textBox2
-            // 
-            textBox2.BackColor = SystemColors.Info;
-            textBox2.Font = new Font("Microsoft YaHei UI", 22F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            textBox2.Location = new Point(501, 106);
-            textBox2.Margin = new Padding(2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(198, 45);
-            textBox2.TabIndex = 59;
-            // 
             // textBox3
             // 
             textBox3.BackColor = SystemColors.Info;
@@ -191,6 +181,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(198, 45);
             textBox3.TabIndex = 60;
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox4
             // 
@@ -202,14 +193,128 @@
             textBox4.Size = new Size(198, 45);
             textBox4.TabIndex = 61;
             // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = SystemColors.Info;
+            comboBox1.Font = new Font("Microsoft YaHei UI", 22.125F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "添加员工信息", "删除员工信息", "改动员工信息", "查询员工信息" });
+            comboBox1.Location = new Point(517, 105);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(221, 46);
+            comboBox1.TabIndex = 62;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(65, 329);
+            dataGridView1.Margin = new Padding(2);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 82;
+            dataGridView1.Size = new Size(662, 310);
+            dataGridView1.TabIndex = 58;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Microsoft YaHei UI", 14.25F);
+            label10.Location = new Point(597, 645);
+            label10.Margin = new Padding(2, 0, 2, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(31, 25);
+            label10.TabIndex = 169;
+            label10.Text = "页";
+            // 
+            // textBox6
+            // 
+            textBox6.BackColor = SystemColors.Info;
+            textBox6.Location = new Point(548, 645);
+            textBox6.Margin = new Padding(2);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(35, 23);
+            textBox6.TabIndex = 168;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Microsoft YaHei UI", 14.25F);
+            label9.Location = new Point(456, 645);
+            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(88, 25);
+            label9.TabIndex = 167;
+            label9.Text = "跳转至第";
+            // 
+            // button13
+            // 
+            button13.Font = new Font("Microsoft YaHei UI", 14.25F);
+            button13.Location = new Point(348, 638);
+            button13.Margin = new Padding(2);
+            button13.Name = "button13";
+            button13.Size = new Size(79, 42);
+            button13.TabIndex = 166;
+            button13.Text = "下一页";
+            button13.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            button12.Font = new Font("Microsoft YaHei UI", 14.25F);
+            button12.Location = new Point(248, 638);
+            button12.Margin = new Padding(2);
+            button12.Name = "button12";
+            button12.Size = new Size(78, 42);
+            button12.TabIndex = 165;
+            button12.Text = "上一页";
+            button12.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Microsoft YaHei UI", 14.25F);
+            label11.Location = new Point(155, 645);
+            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(69, 25);
+            label11.TabIndex = 164;
+            label11.Text = "条记录";
+            // 
+            // textBox7
+            // 
+            textBox7.BackColor = SystemColors.Info;
+            textBox7.Location = new Point(115, 647);
+            textBox7.Margin = new Padding(2);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(36, 23);
+            textBox7.TabIndex = 163;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Microsoft YaHei UI", 14.25F);
+            label12.Location = new Point(61, 645);
+            label12.Margin = new Padding(2, 0, 2, 0);
+            label12.Name = "label12";
+            label12.Size = new Size(50, 25);
+            label12.TabIndex = 162;
+            label12.Text = "每页";
+            // 
             // 操作记录a
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
+            Controls.Add(label10);
+            Controls.Add(textBox6);
+            Controls.Add(label9);
+            Controls.Add(button13);
+            Controls.Add(button12);
+            Controls.Add(label11);
+            Controls.Add(textBox7);
+            Controls.Add(label12);
+            Controls.Add(comboBox1);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
-            Controls.Add(textBox2);
             Controls.Add(dataGridView1);
             Controls.Add(label8);
             Controls.Add(label6);
@@ -223,14 +328,13 @@
             Controls.Add(label1);
             Name = "操作记录a";
             Size = new Size(779, 750);
+            Load += 操作记录a_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
         private Label label8;
         private Label label6;
         private Label label5;
@@ -241,8 +345,17 @@
         private Button button8;
         private Label label7;
         private Label label1;
-        private TextBox textBox2;
         private TextBox textBox3;
         private TextBox textBox4;
+        private ComboBox comboBox1;
+        private DataGridView dataGridView1;
+        private Label label10;
+        private TextBox textBox6;
+        private Label label9;
+        private Button button13;
+        private Button button12;
+        private Label label11;
+        private TextBox textBox7;
+        private Label label12;
     }
 }
